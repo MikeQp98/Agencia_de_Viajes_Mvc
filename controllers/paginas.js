@@ -29,7 +29,7 @@ const paginaNosotros = (req, res) => {
 const paginaTestimoniales = async (req, res) => {
   try {
     const testimoniales = await Testimonial.findAll();
-    res.render("Testimoniales", {
+    res.render("testimoniales", {
       pagina: "Testimoniales",
       testimoniales,
     });
