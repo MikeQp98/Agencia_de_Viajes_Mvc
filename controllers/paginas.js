@@ -30,8 +30,7 @@ const paginaNosotros = (req, res) => {
 const paginaTestimoniales = async (req, res) => {
  
  const promiseDB = [];
- promiseDB.push(Viaje.findAll());
- 
+ promiseDB.push(Testimonial.findAll());
  
   try {
     const resultado = await Promise.All(promiseDB);
