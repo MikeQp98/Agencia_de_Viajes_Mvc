@@ -12,9 +12,9 @@ const router = express.Router();
 
 router.get('/', paginaInicio);
 router.get('/nosotros', paginaNosotros);
-router.get('testimoniales', paginaTestimoniales);
+router.get('/testimoniales', paginaTestimoniales);
 router.post('/testimoniales', guardartestimonial);
-router.get('viajes', paginaViajes);
+router.get('/viajes', paginaViajes);
 router.get('/viajes/:slug', paginaDetalleViaje);
 
 export default router;
