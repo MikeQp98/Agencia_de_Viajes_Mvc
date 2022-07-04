@@ -44,7 +44,7 @@ const paginaViajes = async (req, res) => {
 
   console.log(viajes);
 
-  res.render("Viajes", {
+  res.render("viajes", {
     pagina: "Próximos Viajes",
     viajes,
   });
