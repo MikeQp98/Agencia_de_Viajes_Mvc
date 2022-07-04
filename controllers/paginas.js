@@ -1,5 +1,6 @@
 import { Viaje } from '../models/Viaje.js';
 import { Testimonial } from '../models/Testimoniales.js';
+import { Promise } from 'sequelize';
 
 const paginaInicio = async (req, res) => {
   const promiseDB = [];
@@ -27,11 +28,17 @@ const paginaNosotros = (req, res) => {
 };
 
 const paginaTestimoniales = async (req, res) => {
+ 
+ const promiseDB = [];
+ promiseDB.push(Viaje.findAll());
+ 
+ 
   try {
-    const testimoniales = await Testimonial.findAll();
+    const resultado = await Promise.All(promiseDB);
+    
     res.render('Testimoniales', {
       pagina: 'Testimoniales',
-      testimoniales,
+      testimoniales: resultado[0]
     });
   } catch (error) {
     console.log(error);
